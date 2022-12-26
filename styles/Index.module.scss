@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 11px;
+    grid-row-gap: 20px;
+    @media(max-width: 1400px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media(max-width: 1060px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media(max-width: 730px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .singleProduct {
+        width: 332px;
+        .description {
+            font-size: 14px;
+            font-weight: 400;
+            font-family: 'Roboto', Times, serif
+        }
+        .category {
+            color: #999999;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: 'Roboto', Times, serif
+        }
+        h2 {
+            font-family: 'Roboto', Times, serif;
+            font-weight: 600;
+            font-size: 22px;
+        }
+    }
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    a {
+        text-decoration: none;
+        font-family: 'Roboto', Times, serif;
+        font-weight: 600;
+        font-size: 22px;
+    }
+    margin-bottom: 20px;
+}
+
+.isInCart {
+    display: flex;
+    background-color: #00B177;
+    border-radius: 90px;
+    color: white;
+    font-size: 13px;
+    width: 175px;
+    height: 40px;
+    font-family: 'Roboto', Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardFooter {
+    display: flex;
+    background: #F5F5F7;
+    border-radius: 90px;
+    width: 175px;
+    font-family: 'Roboto', Times, serif;
+    .addToCart {
+        background-color: #4056A1;
+        color: white;
+        border: none;
+        border-radius: 90px;
+        font-family: 'Roboto', Times, serif;
+        font-size: 13px;
+        width: 100px;
+        height: 40px;
+    }
+    .quantityChanger {
+        display: flex;
+        background-color: #F5F5F7;
+        border-radius: 90px;
+        button {
+            width: 35px;
+            border: none;
+            border-radius: 30px;
+        }
+        div {
+            padding-top: 11px;
+        }
+    }
+}
+
+.low {
+    display: flex;
+    position: relative;
+    .like {
+        box-sizing: border-box;
+        position: absolute;
+        top: 12px;
+        left: 220px;
+    }
+}
+
+.hit {
+    position: relative;
+    width: 64px;
+    height: 24px;
+    color: white;
+    font-size: 24px;
+    pointer-events: none;
+    &:before {
+        position: absolute;
+        left: 160px;
+        content: "";
+        width: 71.1%;
+        height: 100%;
+        transform-origin: 0 100%;
+        transform: skew(-30deg);
+        background: rgb(196, 43, 43);
+        z-index: -1;
+    }
+    span {
+        position: absolute;
+        left: 160px;
+        top: 5px;
+        margin: 0 28.9%;
+        font-family: 'Roboto', Times, serif;
+        font-size: 13px;
+        pointer-events: auto;
+    }
+}
