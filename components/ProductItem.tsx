@@ -54,10 +54,10 @@ export default function PrdouctItem({ product }: Props) {
       <h2>
         {product.price * 70} ₽/ <span className={styles.category}>шт.</span>
       </h2>
-      {existsInCart ? (
-        <div className={styles.isInCart}>В корзине</div>
-      ) : (
-        <div className={styles.low}>
+      <div className={styles.low}>
+        {existsInCart ? (
+          <div className={styles.isInCart}>В корзине</div>
+        ) : (
           <div className={styles.cardFooter}>
             <button className={styles.addToCart} onClick={() => !existsInCart && addItem(product)}>
               В корзину
@@ -68,11 +68,11 @@ export default function PrdouctItem({ product }: Props) {
               <button onClick={plusOne}>+</button>
             </div>
           </div>
-          <div className={styles.like} onClick={onLikeClick}>
-            {like ? <BsHeartFill /> : <BsHeart />}
-          </div>
+        )}
+        <div className={styles.like} onClick={onLikeClick}>
+          {like ? <BsHeartFill /> : <BsHeart />}
         </div>
-      )}
+      </div>
     </div>
   );
 }
