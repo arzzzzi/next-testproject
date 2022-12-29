@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
+import { MainLayout } from '../components/Layout';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
 import { dislikeItem } from '../redux/favorites/favorite.slice';
@@ -10,7 +11,7 @@ export default function FavoritesPage() {
   const dispatch = useDispatch();
 
   return (
-    <>
+    <MainLayout title="Favorites">
       <div>
         <Link legacyBehavior href={'/'}>
           <a>Вернуться к покупкам</a>
@@ -32,6 +33,6 @@ export default function FavoritesPage() {
       ) : (
         <div>Вы ничего не добавили в избранное</div>
       )}
-    </>
+    </MainLayout>
   );
 }

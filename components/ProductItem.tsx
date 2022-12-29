@@ -45,7 +45,7 @@ export default function PrdouctItem({
   };
 
   const onAddClick = () => {
-    let totalPrice = qty * price;
+    let totalPrice = qty * price * 70;
     const tempProduct = {
       ...item,
       count: qty,

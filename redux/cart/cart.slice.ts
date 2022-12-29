@@ -22,11 +22,7 @@ export const cartSlice = createSlice({
           if (item.id === action.payload.id) {
             let newCount = item.count + action.payload.count;
             let newTotalPrice = newCount * item.price * 70;
-            return {
-              ...item,
-              count: newCount,
-              totalPrice: newTotalPrice,
-            };
+            return { ...item, count: newCount, totalPrice: newTotalPrice };
           } else {
             return item;
           }
