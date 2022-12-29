@@ -36,8 +36,7 @@ export default function Home() {
       </header>
       <main className="maga">
         <div className={styles.products}>
-          {data &&
-            data.map((product: IProduct) => <PrdouctItem product={product} key={product.id} />)}
+          {data && data.map((obj: any) => <PrdouctItem key={obj.id} {...obj} />)}
         </div>
       </main>
     </>

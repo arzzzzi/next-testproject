@@ -12,3 +12,12 @@ interface IRating {
   rate: number;
   count: number;
 }
+
+export interface ICartItem extends IProduct {
+  count: number;
+}
+
+export interface Cart {
+  items: ICartItem[];
+  totalPrice: number;
+}

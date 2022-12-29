@@ -16,5 +16,5 @@ export const favoriteSlice = createSlice({
   },
 });
 
-export const favoriteReducer = favoriteSlice.reducer;
-export const favoriteActions = favoriteSlice.actions;
+export default favoriteSlice.reducer;
+export const { likeItem, dislikeItem } = favoriteSlice.actions;

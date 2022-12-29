@@ -1,11 +1,13 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
 import { useActions } from '../hooks/useActions';
 import { useTypedSelector } from '../hooks/useTypedSelector';
+import { dislikeItem } from '../redux/favorites/favorite.slice';
 
 export default function FavoritesPage() {
   const { favorite } = useTypedSelector((state) => state);
-  const { dislikeItem } = useActions();
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -21,7 +23,9 @@ export default function FavoritesPage() {
               <Image src={product.image} alt={product.title} height={140} width={140} />
               <h2>Название: {product.title}</h2>
               <h2>Цена: {product.price * 70} </h2>
-              <button onClick={() => dislikeItem({ id: product.id })}>Удалить из избранного</button>
+              <button onClick={() => dispatch(dislikeItem({ id: product.id }))}>
+                Удалить из избранного
+              </button>
             </li>
           ))}
         </ul>
