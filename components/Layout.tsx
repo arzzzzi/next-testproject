@@ -38,6 +38,7 @@ export function MainLayout({ children, title = 'Next App' }: IProps) {
           display: flex;
           justify-content: space-around;
           align-items: center;
+          z-index: 10;
         }
         nav a {
           color: white;
